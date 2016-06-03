@@ -1,11 +1,12 @@
 import {Component} from 'angular2/core';
 
 import {IProduct} from './product';
-
+import {StarComponent} from '../shared/star.component';
 import{ProductFilterPipe} from './product-filter.pipe';
 @Component({
     selector: 'pm-products',
     templateUrl: 'app/products/product-list.component.html',
+    directives: [StarComponent],
     styleUrls: ['app/products/product-list.component.css'],
     pipes: [ProductFilterPipe]
 })
@@ -41,6 +42,9 @@ export class ProductListComponent {
     listFilter: string = "";
     toggleImage(): void {
 	this.showImage = !this.showImage;
+    }
+    onRatingClicked(message: string) : void { 
+	this.pageTitle = 'Product List: ' + message;
     }
 }
 
