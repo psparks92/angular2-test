@@ -11,7 +11,7 @@ import {ProductService} from './products/product.service';
 	</div>
 	`,
 	directives: [ProductListComponent],
-	providers: [ProductService]
+	providers: [ProductService']
 	})
 
 export class AppComponent {

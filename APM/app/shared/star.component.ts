@@ -9,13 +9,13 @@ import {Component , OnChanges, Input, Output, EventEmitter} from 'angular2/core'
 export class StarComponent implements OnChanges {
     @Input() rating: number;
     starWidth: number;
-    @Output() notify: EventEmitter<string> = new EventEmitter<string>();
+    @Output() ratingClicked: EventEmitter<string> = new EventEmitter<string>();
     
     ngOnChanges(): void {
 	this.starWidth = this.rating * 86 / 5;
     }
 
-    OnClick() {
-	this.notify.emit('clicked!');
+    onClick() {
+	this.ratingClicked.emit(`The rating ${this.rating} was clicked!`);
     }
 }
