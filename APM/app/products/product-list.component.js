@@ -1,4 +1,4 @@
-System.register(['angular2/core', './product.service', '../shared/star.component', './product-filter.pipe'], function(exports_1, context_1) {
+System.register(['angular2/core', './product.service', 'angular2/router', '../shared/star.component', './product-filter.pipe'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './product.service', '../shared/star.component
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, product_service_1, star_component_1, product_filter_pipe_1;
+    var core_1, product_service_1, router_1, star_component_1, product_filter_pipe_1;
     var ProductListComponent;
     return {
         setters:[
@@ -19,6 +19,9 @@ System.register(['angular2/core', './product.service', '../shared/star.component
             },
             function (product_service_1_1) {
                 product_service_1 = product_service_1_1;
+            },
+            function (router_1_1) {
+                router_1 = router_1_1;
             },
             function (star_component_1_1) {
                 star_component_1 = star_component_1_1;
@@ -50,7 +53,7 @@ System.register(['angular2/core', './product.service', '../shared/star.component
                     core_1.Component({
                         selector: 'pm-products',
                         templateUrl: 'app/products/product-list.component.html',
-                        directives: [star_component_1.StarComponent],
+                        directives: [star_component_1.StarComponent, router_1.ROUTER_DIRECTIVES],
                         styleUrls: ['app/products/product-list.component.css'],
                         pipes: [product_filter_pipe_1.ProductFilterPipe]
                     }), 
