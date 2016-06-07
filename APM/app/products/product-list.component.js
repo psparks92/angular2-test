@@ -34,16 +34,17 @@ System.register(['angular2/core', './product.service', '../shared/star.component
                     this.imageWidth = 50;
                     this.imageMargin = 2;
                     this.showImage = false;
-                    this.listFilter = "";
                 }
                 ProductListComponent.prototype.toggleImage = function () {
                     this.showImage = !this.showImage;
                 };
                 ProductListComponent.prototype.onRatingClicked = function (message) {
-                    this.pageTitle = 'Product List: ' + message;
+                    this.pageTitle = 'Product List: ' + products;
                 };
                 ProductListComponent.prototype.ngOnInit = function () {
-                    this.products = this._productService.getProducts();
+                    var _this = this;
+                    this._productService.getProducts()
+                        .subscribe(function (products) { return _this.products = products; }, function (error) { return _this.errorMessage = error; });
                 };
                 ProductListComponent = __decorate([
                     core_1.Component({

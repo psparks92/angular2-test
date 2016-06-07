@@ -1,2 +1,4 @@
 APM/node_modules/
 *.swp
+*.swo
+*~
